@@ -17,7 +17,10 @@
   
 // // -- отримує текст який зберігається в елементі з класом listElement2
 // let list = document.getElementsByClassName('listElement2');
-// console.log(list)
+// for (const element of list) {
+//     let text = element.innerText;
+//     console.log(text);
+// }
 
 
 // // -- отримує всі елементи li та змінює ім колір фону на сірий
