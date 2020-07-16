@@ -248,7 +248,8 @@
 //     div.innerText = JSON.stringify(element);   
 // }
 
-// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+// - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за 
+// допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
 // for (const element of users) {
 //     let div = document.createElement('div');
 //     document.body.appendChild(div);
