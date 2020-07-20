@@ -36,11 +36,12 @@
 // console.log(map);
 
 // - создать массив со словами на 15-20 элементов.
-// let word = ['ola', 'kols', 'mona', 'dina', 'baba', 'didi', 'sisi', 'mini', 'o', 
-// 'tok', 'div', 'span', 'h1', 'h6','sos'];
-// -- отсортировать его по алфавиту в восходящем порядке.
+// let word = ['Ola', 'kols', 'Mona', 'dina', 'baba', 'didi', 'sisi', 'mini', 'o', 
+// 'tok', 'div', 'span', 'H1', 'h6','sos'];
+// // -- отсортировать его по алфавиту в восходящем порядке.
 
-// let sortWord = word.sort((a, b) => a > b );
+// let mapLowerCase = word.map((element) => element.toLowerCase());
+// let sortWord = mapLowerCase.sort((a, b) => a > b);
 // console.log(sortWord);
 
 // -- отсортировать его по алфавиту  в нисходящем порядке.
@@ -58,17 +59,17 @@
 
 // Все робити через функції масивів (foreach, map ...тд)
 // Дан масив :
-let users = [ {name: 'vasya', age: 31, status: false},
- {name: 'petya', age: 30, status: true},
- {name: 'kolya', age: 29, status: true},
- {name: 'olya', age: 28, status: false},
- {name: 'max', age: 30, status: true},
- {name: 'anya', age: 31, status: false}, 
- {name: 'oleg', age: 28, status: false}, 
- {name: 'andrey', age: 29, status: true}, 
- {name: 'masha', age: 30, status: true}, 
- {name: 'olya', age: 31, status: false}, 
- {name: 'max', age: 31, status: true} ];
+// let users = [ {name: 'vasya', age: 31, status: false},
+//  {name: 'petya', age: 30, status: true},
+//  {name: 'kolya', age: 29, status: true},
+//  {name: 'olya', age: 28, status: false},
+//  {name: 'max', age: 30, status: true},
+//  {name: 'anya', age: 31, status: false}, 
+//  {name: 'oleg', age: 28, status: false}, 
+//  {name: 'andrey', age: 29, status: true}, 
+//  {name: 'masha', age: 30, status: true}, 
+//  {name: 'olya', age: 31, status: false}, 
+//  {name: 'max', age: 31, status: true} ];
 // - відсортувати його за  віком (зростання , а потім окремо спадання)
 // let usersAfeSort = users.sort((user1, user2) => user1.age - user2.age)
 // console.log(usersAfeSort);
@@ -342,16 +343,25 @@ let users = [ {name: 'vasya', age: 31, status: false},
 // 2. Key = 4
 // Answer: MinIndex = 3, MaxIndex = 6.
 
-// let array = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
-// let key = 14;
-// let minIndex = array.indexOf(key);
-// let maxIndex = array.lastIndexOf(key);
-// function minMaxIndexs(minIndex, maxIndex) {
-//     if (minIndex === -1){
-//         console.log(-1)
-//         return false;
-//     }
-//      console.log(`MinIndex = ${minIndex}, MaxIndex = ${maxIndex}`)   
-// }
+let array = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14];
 
-// minMaxIndexs(minIndex, maxIndex);
+function minMaxIndexs(array) {
+    let key = 5;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === key){
+          minIndex = i;
+          for (let j = array.length; j > -1; j--) {
+              if (array[j] === key) {
+                  maxIndex = j;
+                  console.log(`MinIndex = ${minIndex}, MaxIndex = ${maxIndex}`);
+                  return minIndex, maxIndex;   
+              }              
+          }
+        }
+      
+    }
+    return -1;
+}
+
+minMaxIndexs(array);
+// console.log(minIndex, maxIndex);
