@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .dropdown-content {
+         display: none;}
+         .show {
+             display: block;}
+
+    </style>
 </head>
 <body>
 
 <div id = 'text'>Lorem ipsum dolor sit, amet consectetur </div>
+<form action="" id='form' name=myform>
+    <input type="button" value="Ok" name = 'btn'><br>
+    <input type="button" value="Hide me" id='hidebtn' name = 'hb'><br>
+    <label for="age">You age?</label>
+    <input type="number" name="age" id="agenumber">
+    <input type="button" value="Підтвердіть" name="submitage"><br>
+</form>
+
+<p id = 'menu'>MENU</p>
+<div class="dropdown-content" id = 'hidemenu'>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+<form action="" id='firsrform'>
+    <input type="text" name="textone" id="onetext" value="My">
+    <input type="text" name="texttwo" id="twotext" value="name">
+</form>
+<form action="" id='secondform'>
+    <input type="text" name="textthree" id="threetext" value="John">
+    <input type="text" name="textfour" id="fourtext" value="Deer">
+</form>
+
+<button id="concat" > concat </button>
+
+<form action="" id="tableform" name="tbform">
+    <input type="text" name="row" id="tablerow" value="">
+    <input type="text" name="cell" id="tablecell" value="">
+    <input type="text" name="innertext" id="intext" value="">
+    <input type="button" value="Enter" name="enterbtn">
+</form>
+<form action="" id='banword' name='bword'>
+    <input type="text" name="textban" id="tban" value="">
+    <input type="button" value="Enter" id="banbtn">
+</form>
+
+<form action="" id='filterform' name="formfilter">
+    <label for="statuschekbox">Status</label>
+    <input type="checkbox" name="checkboxone" id="statuscheckbox">
+    <label for="agechekbox">Age</label>
+    <input type="checkbox" name="checkboxtwo" id="agecheckbox">
+    <label for="adresschekbox">Adress</label>
+    <input type="checkbox" name="checkboxthree" id="adresscheckbox"><br>
+    
+</form>
+
+<div class = list></div>
+
+<script src="main.js"></script>
     
 </body>
 </html>
+
+<!-- navigator.geolocation.getCurrentPosition((geo) => {
+    console.log(geo.coords.latitude);
+    console.log(geo.coords.longitude);
+    }) -->
