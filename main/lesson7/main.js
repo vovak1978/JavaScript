@@ -125,9 +125,10 @@
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка, 
 // з відповідним вмістом.
 // (Додатковачастина для завдання)
+
 // const formaTable = document.forms.tbform;
-// let rowOfTable = + document.querySelector('#tablerow').value;
-// let cellOfTable = + document.querySelector('#tablecell').value;
+// let rowOfTable = document.querySelector('#tablerow').value;
+// let cellOfTable = document.querySelector('#tablecell').value;
 // let textOfTable = document.querySelector('#intext').value;
 // const enterButton = formaTable.enterbtn;
 
@@ -140,8 +141,41 @@
 
 
 
-// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
+// - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо 
+// нажатием на стрелочки.
+// let imageArray = [
+//     {id: 1, img: 'cosacks.jpeg'},
+//     {id: 2, img: 'graj.jpeg' },
+//     {id: 3, img: 'oko.jpeg' },
+//     {id: 4, img: 'tur1.jpeg' }
+// ];
 
+
+// let image = document.querySelector('#image');
+// btnRight = document.querySelector('#right');
+// btnLeft = document.querySelector('#left');
+// start = 0;
+// image.src = imageArray[start].img;
+
+// btnLeft.onclick = () => {
+//     start = start + 1
+//     if (start < imageArray.length ) {
+//         image.src = imageArray[start].img;
+//        }
+//    else { start = 0;
+//     image.src = imageArray[start].img;
+//    }
+// }
+
+// btnRight.onclick = () => {
+//     start = start - 1;
+//     if (start > -1) {
+//         image.src = imageArray[start].img;
+//        }
+//    else { start = imageArray.length - 1;
+//     image.src = imageArray[start].img;
+//    }
+// }
 
 // - Сворити масив не цензцрних слів.
 // Сворити інпут текстового типу.
