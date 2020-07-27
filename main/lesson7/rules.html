@@ -45,7 +45,27 @@
         </div>
 
         <script>
-			// Your awesome code here.....
+			// -- создать скрипт, который берет считывает на странице (rules.html) текст
+            //  и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
+            // При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+            const div = document.querySelector('#content');
+            const rulesArray = document.getElementsByTagName('h2');
+            const ul = document.createElement('ul');
+            const wrap = document.querySelector('#wrap');
+
+            for (let i = 0; i < rulesArray.length; i++) {
+                const li = document.createElement("li");
+                const a = document.createElement('a');
+                rulesArray[i].id = i;
+                a.href = (`#${i}`);
+                a.innerText = rulesArray[i].innerText;
+                ul.appendChild(li);
+                li.appendChild(a);
+                          
+            }
+            div.appendChild(ul);
+            div.style.float = 'left';
+            wrap.style.float = 'right';
         </script>
     </body>
 </html>
