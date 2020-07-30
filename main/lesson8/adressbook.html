@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADDRESS BOOK</title>
-</head>
-<body>
+
     
+</head>
+
+<body>
+    <div>
+        <h1>Записник</h1>
+    </div>
+    <div>
+        <form action="" id="searchform">
+            <input type="text" name="text" id="text">
+            <select name="" id="select"></select>
+            <label for="text">Введіть початкові символи прізвища</label>
+            <input type="button" value="Додати новий запис" id="addbtn">
+                  
+            
+        </form>
+    </div>
+     <div>
+        <form action="" id="edit">
+            <input type="text" name="rows" id="person">
+            <input type="button" value="Редагувати" id="editbtn">
+        </form>
+        
+    </div>
+
+    <div>
+        <form action="" id="data">
+            <label for="pib">П.І.Б</label>
+            <input type="text" name="PIB" id="pib"><br>
+            <label for="tele">Номер телефону</label>
+            <input type="tel" name="TELE" id="tele"><br>
+            <label for="email">Електронна почта</label>
+            <input type="email" name="email" id="email"><br>
+            <label for="firm">Фирма</label>
+            <input type="text" name="firm" id="firm"><br>
+            <label for="department">Відділ</label>
+            <input type="text" name="department" id="department"><br>
+            <label for="date">Дата народження</label>
+            <input type="date" name="date" id="date">
+            <input type="button" value="Зберегти" id="savebtn">
+        </form>
+    </div>
+
+    
+    <script src="adress.js"></script>
 </body>
 </html>
