@@ -5,10 +5,11 @@
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, 
 // в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными 
 // объекта
-
+const findbtn = document.querySelector('#seekbtn');
+const addbtn = document.querySelector('#addbtn');
 const saveBtn = document.querySelector('#savebtn');
 const editbtn = document.querySelector('#editbtn');
-const addbtn = document.querySelector('#addbtn');
+
 
 const data = document.querySelector('#data');
 const name = document.querySelector('#pib');
@@ -18,6 +19,7 @@ const firm = document.querySelector('#firm');
 const department = document.querySelector('#department');
 const dateBirthday = document.querySelector('#date');
 
+const searchform = document.querySelector('#searchform');
 const text = document.querySelector('#text');
 const list = document.querySelector('#select');
 
@@ -30,11 +32,23 @@ window.onload = () => {
     data.hidden = true;
     edit.hidden = true;
     list.hidden = true;
+    searchform.hidden = true;
    for (let i = 0; i < localStorage.length; i++) {
     nameArray.push(localStorage.key(i));   
    }
    
 }
+
+findbtn.onclick = () => {
+   searchform.hidden = false;
+  
+}
+
+addbtn.onclick = () => {
+    data.hidden = false;
+  
+}
+
 
 text.onkeyup = () => {
     list.hidden = false;
@@ -48,28 +62,27 @@ text.onkeyup = () => {
         
         option.onclick =() => {
              edit.hidden = false;
-             const adressObject = JSON.parse(localStorage.getItem(element));
-             person.value = element;
-                                      
+            //  person.value = element;
+            let elem =  event.target;
+            person.value = elem.value;  
+            const adressObject = JSON.parse(localStorage.getItem(elem.value)); 
+            console.log(adressObject);    
+                    editbtn.onclick = () => {
+                data.hidden = false;
+                name.value = elem.value;
+                telephone.value = adressObject.telephone;
+                mail.value = adressObject.mail;
+            firm.value = adressObject.firm;
+            department.value = adressObject.department;
+            dateBirthday.value = adressObject.dateBirtday;
+                               
+            }    
                  }
-                 editbtn.onclick = () => {
-                    data.hidden = false;
-                    name.value = element;
-                    telephone.value = adressObject.telephone;
-                    mail.value = adressObject.mail;
-                firm.value = adressObject.firm;
-                department.value = adressObject.department;
-                dateBirthday.value = adressObject.dateBirtday;
-                                   
-                }      
+                  
     });
 
 }
 
-addbtn.onclick = () => {
-    data.hidden = false;
-  
-}
 
 
 saveBtn.onclick = () => {
@@ -81,4 +94,13 @@ saveBtn.onclick = () => {
         dateBirtday: dateBirthday.value
             }        
   localStorage.setItem(name.value, JSON.stringify(object));
+  name.value = ("");
+  telephone.value = ("");
+  mail.value =("");
+  firm.value = ("");
+  department.value = ("");
+  dateBirthday.value =("");
+ 
+  window.location.reload();
+
 }
